@@ -1,0 +1,95 @@
+
+//header
+.header-left {
+	width: 15%;
+	height: 100%;
+	background-color: #d6d7dc;
+	float: left;
+	position: fixed;
+	.logo-header {
+		background: url('../../img/logo.png') no-repeat center;
+		background-size: contain;
+		width: 75%;
+		height: 85px;
+		text-indent: -99999px;
+		margin: 10px auto;
+	}
+	.menu-left {
+		margin-top: 35px;
+		> ul {
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			> li {
+				margin: 4px 0px;
+				> a {
+					display: block;
+					width: 100%;
+					height: 100%;
+					text-indent: center;
+					padding: 3px 5px 3px 15px;
+					text-decoration: none;
+					color: #000;
+					> i {
+						padding-right: 5px;
+					}
+					&:hover, &:focus, &.active {
+						background-color: #a6a6a9;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.header-top {
+	width: 85%;
+	height: 50px;
+	position: fixed;
+	background-color: #d6d7dc;
+	z-index: 100;
+	.menu-top {
+		float: right;
+		height: 100%;
+		> ul {
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			> li {
+				float: left;
+				height: 50px;
+			}
+			> li#time {
+				width: 300px;
+				> p {
+					text-align: right;
+					padding: 0px;
+					padding-top: 4px;
+					padding-right: 5px;
+					margin: 0px;
+					font-size: 12px;
+					.clockdate {
+						padding-right: 3px;
+					}
+				}
+			}
+			> li#close {
+				width: 140px;
+				> a {
+					width: 100%;
+					height: 100%;
+					display: block;
+					line-height: 50px;
+					text-align: center;
+					text-decoration: none;
+					&:focus, &:hover {
+						background-color: #bd5248;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,74 @@
+// Area panel - esto es para todo los paneles en general
+.area-panel {
+	h2 {
+		color: #000;
+		font-size: 24px;
+		padding-bottom: 8px;
+		border-bottom: 2px solid #000;
+		> a {
+			float: right;
+		}
+	}
+	.panel-all {
+		padding: 0px 30px !important;
+		margin-top: 50px;
+		padding-bottom: 50px !important;
+		.list {
+			margin-top: 30px;
+			.opcion-boton {
+				width: 100%;
+				margin-bottom: 30px;
+				.object {
+					margin-bottom: 20px;
+					.page-group {
+						float: right;
+					}
+				}
+			}
+		}
+		.nav-tabs {
+			margin-top: 30px;
+		}
+		.list-form {
+			border: 1px solid #dddddd;
+			border-top: none;
+			padding-bottom: 20px;
+		}
+	}
+	
+	//tabla 
+	table {
+		thead {
+			tr {
+				> th {
+					text-align: center;
+					background-color: #d6d7dc !important;
+					font-size: 12px;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					font-size: 10px;
+				}
+				&:focus > td, &:hover > td {
+					background-color: #d6d7dc !important;
+					color: #009833;
+				}
+			}
+		}
+	} 
+	//form - box 
+	.form-box {
+		border: 1px solid #dddddd;
+		padding: 3px 12px 18px 12px;
+		margin-bottom: 10px;
+	}
+}
+
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}
