@@ -38,12 +38,27 @@
 	
 	//tabla 
 	table {
+		position: relative;
+		width: 100%;
 		thead {
 			tr {
 				> th {
 					text-align: center;
 					background-color: #d6d7dc !important;
 					font-size: 12px;
+					min-width: 5%;
+					&:after {
+						content: ' ';
+					    display: block;
+					    visibility: hidden;
+					    clear: both;
+					}
+				}
+				&:after {
+					content: ' ';
+				    display: block;
+				    visibility: hidden;
+				    clear: both;
 				}
 			}
 		}
@@ -56,6 +71,12 @@
 					background-color: #d6d7dc !important;
 					color: #009833;
 				}
+				&:after {
+					content: ' ';
+				    display: block;
+				    visibility: hidden;
+				    clear: both;
+				}
 			}
 		}
 	} 
@@ -65,10 +86,4 @@
 		padding: 3px 12px 18px 12px;
 		margin-bottom: 10px;
 	}
-}
-
-.floatingHeader {
-  position: fixed;
-  top: 0;
-  visibility: hidden;
 }

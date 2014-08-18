@@ -28,7 +28,7 @@ class Site extends CI_Controller {
 	public function agregar()
 	{
 		$this->template->write('title', '');
-        $this->template->write_view('content', 'site/vehiculo/add_vehiculo');
+        $this->template->write_view('content', 'site/vehiculo/add_vehiculo_2');
         $this->template->render();
 	}
     

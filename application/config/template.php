@@ -61,7 +61,7 @@ $template['site']['regions']        = array('title', 'content');
 $template['site']['parser']         = 'parser';
 $template['site']['parser_method']  = 'parse';
 $template['site']['parse_template'] = FALSE;
-$template['site']['partials']       = array('navbar_left', 'footer', 'navbar_top');
+$template['site']['partials']       = array('navbar_left', 'navbar_top');
 $template['site']['autoload_lib']   = array('session');
 
 

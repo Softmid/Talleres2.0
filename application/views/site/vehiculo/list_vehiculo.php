@@ -27,24 +27,24 @@
 				</div>
 			</div>
 		</div>
-		<table class="table table-bordered">
+		<table class="table table-bordered persist-area">
 			<thead>
-				<tr class="active">
-					<th>Nº</th>
-					<th>Marca</th>
-					<th>Modelo</th>
-					<th>Color</th>
-					<th>Cliente</th>
-					<th>Empresa</th>
-					<th>Monto</th>
-					<th>Gastos</th>
-					<th>Monto - Gastos</th>
-					<th>Fecha Promesa</th>
+				<tr class="active persist-header">
+					<th width="10%">Nº</th>
+					<th width="10%">Marca</th>
+					<th width="10%">Modelo</th>
+					<th width="10%">Color</th>
+					<th width="10%">Cliente</th>
+					<th width="10%">Empresa</th>
+					<th width="10%">Monto</th>
+					<th width="10%">Gastos</th>
+					<th width="10%">Monto - Gastos</th>
+					<th width="11%">Fecha Promesa</th>
 				<tr>
 			</thead>
 			<tbody>
 				<?php 
-					for($i = 0; $i < 20; $i++)
+					for($i = 0; $i < 50; $i++)
 					{
 						echo '
 						<tr>
@@ -59,10 +59,12 @@
 	                        <td align="center">$ 1,533.00</td>
 	                        <td style="color:#F00;" align="center">Miercoles 30 de Noviembre del -0001 a las 00 Hrs con 00 Min</td>
 	                    </tr>
+	                    <div class="ot-'.$i.'"></div>
 						';
 					}
 				?>
 			</tbody>
 		</table>
 	</div>
+
 </section>

@@ -25,7 +25,6 @@
 			<div class="cont-panel">
 				<div class="header-top"><?php echo $navbar_top ?></div>
 				<div class="area-panel"><?php echo $content ?></div>
-				<?php echo $footer ?>
 			</div>
 		</div>		
 		<!--- scripts area -->
