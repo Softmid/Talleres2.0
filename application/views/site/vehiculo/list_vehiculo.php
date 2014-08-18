@@ -18,12 +18,14 @@
 					</form>
 				</div>
 				<div class="col-lg-6 clear pad-0">
-					<div class="btn-group page-group">
+					
+                        <? echo $this->pagination->create_links(); ?>
+<!--
 						<a class="btn btn-default active">1</a>
 						<a class="btn btn-default">2</a>
 						<a class="btn btn-default">3</a>
 						<a class="btn btn-default">4</a>
-					</div>
+-->
 				</div>
 			</div>
 		</div>
@@ -44,20 +46,20 @@
 			</thead>
 			<tbody>
 				<?php 
-					for($i = 0; $i < 20; $i++)
+					foreach($vehiculos->result() as $vehiculo)
 					{
 						echo '
 						<tr>
-	                    	<td align="center">6345</td>
-	                        <td align="center">DODGE</td>
-	                        <td align="center">ATTITUDE</td>
-	                        <td align="center">BLANCO</td>
-	                        <td align="center">VALE QUALITAS VINCULO C-6175</td>
-	                        <td align="center">particular</td>
-	                        <td align="center">$ 1,533.00</td>
-	                        <td align="center">$ 0.00</td>                    
-	                        <td align="center">$ 1,533.00</td>
-	                        <td style="color:#F00;" align="center">Miercoles 30 de Noviembre del -0001 a las 00 Hrs con 00 Min</td>
+	                    	<td align="center">'.$vehiculo->clave.'</td>
+	                        <td align="center">'.$vehiculo->marca.'</td>
+	                        <td align="center">'.$vehiculo->modelo.'</td>
+	                        <td align="center">'.$vehiculo->color.'</td>
+	                        <td align="center">'.$vehiculo->cliente.'</td>
+	                        <td align="center">'.$vehiculo->empresa.'</td>
+	                        <td align="center">'.number_format($vehiculo->monto,2).'</td>
+	                        <td align="center">'.number_format($vehiculo->gastos,2).'</td>                    
+	                        <td align="center">'.$total = number_format($vehiculo->monto - $vehiculo->gastos,2).'</td>
+	                        <td style="color:#F00;" align="center">'.$this->funciones->convertir_fecha($vehiculo->fechaPromesa).'</td>
 	                    </tr>
 						';
 					}

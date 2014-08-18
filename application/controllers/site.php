@@ -17,10 +17,51 @@ class Site extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+    
+    
+        public function __construct()
+        {
+            parent::__construct();
+            
+            $this->load->model('Procesos_Vehiculo');
+
+        }
+    
+	public function index($min = '')
 	{   
+        if(empty($min))
+		{
+			$min = 0;
+		}
+
+		$vehiculo['categorias'] = $this->Procesos_Vehiculo->categorias();
+		$numeroVehiculos = $this->Procesos_Vehiculo->countVehiculo();
+		
+		$data = array( 
+			'pagina' => 'vehiculos'
+		);
+		
+		//paginacion
+		$this->load->library('pagination');
+
+		$config['base_url'] = base_url()."site/index";
+		$config['total_rows'] = $numeroVehiculos;
+		$config['per_page'] = 30;
+		$config['num_links'] = 5;
+		$config['full_tag_open'] = '<div class="btn-group page-group">'; // el contenedor de la paginacion
+		$config['full_tag_close'] = '</div>';
+        $config['anchor_class'] = 'class="btn btn-default"'; // clases usadas en todos los links menos el activo
+        $config['cur_tag_open'] = '<a class="btn btn-default active">'; // clase usada para la paginacion activa
+        $config['cur_tag_close'] = '</a>';
+
+		$this->pagination->initialize($config);
+
+		//desplegar vehiculos
+		$vehiculo['vehiculos'] = $this->Procesos_Vehiculo->verVehiculo($min,$config['per_page']);
+
+        
 		$this->template->write('title', '');
-        $this->template->write_view('content', 'site/vehiculo/list_vehiculo');
+        $this->template->write_view('content', 'site/vehiculo/list_vehiculo',$vehiculo);
         $this->template->render();
         
 	}
