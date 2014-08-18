@@ -27,9 +27,9 @@ class Migration_Create_Users extends CI_Migration {
 
 		$this->dbforge->add_field($fields);
 		$this->dbforge->add_key('id', TRUE);
-		$this->dbforge->create_table('usuarios', TRUE);
-		$this->db->simple_query('ALTER TABLE  `usuarios` DEFAULT CHARSET=utf8');
-		$this->db->simple_query("INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `usuario`, `pass`, `correo`, `activo`, `tipo`, `creado`) VALUES (1, 'Administrador', 'Sistema', 'admin', '09ae22c2c195d71cca64d461a1603332efb073d9', 'admin@fnyasociados.com', 1, 0, CURRENT_TIMESTAMP)");
+		$this->dbforge->create_table('users', TRUE);
+		$this->db->simple_query('ALTER TABLE  `users` DEFAULT CHARSET=utf8');
+		$this->db->simple_query("INSERT INTO `users` (`id`, `nombre`, `apellidos`, `usuario`, `pass`, `correo`, `activo`, `tipo`, `creado`) VALUES (1, 'Administrador', 'Sistema', 'admin', '09ae22c2c195d71cca64d461a1603332efb073d9', 'admin@fnyasociados.com', 1, 0, CURRENT_TIMESTAMP)");
 
 		$fields = array(
 				"`ip` varchar(20) NOT NULL",
